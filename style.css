@@ -1,0 +1,220 @@
+html,
+body {
+  margin: 2%;
+}
+.slot-machine {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  width: fit-content;
+  flex-flow: row;
+}
+.reel {
+  flex-flow: column wrap;
+  border: solid #5c0000 5px;
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+}
+.btnContainer {
+  display: flex;
+  flex-flow: row;
+  border: solid #8c0000 4px;
+  background-image: url("./images/casinoBg.PNG");
+  background-color: #93100c;
+  background-repeat: no-repeat;
+  background-size: cover;
+  justify-content: space-around;
+  width: 40rem;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  box-shadow: inset 0 0 10px #682b2b;
+}
+.info-container {
+  display: flex;
+  flex-flow: row;
+  border: solid #8c0000 4px;
+  justify-content: space-around;
+  width: 40rem;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  box-shadow: inset 0 0 10px #000000;
+  background-image: url("./images/casinoBg.PNG");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #e0eff2;
+  font: italic bold Georgia;
+  text-shadow: 2px 2px #4b1818;
+}
+.slot {
+  border-radius: 25px;
+  padding: 1px;
+  width: 150px;
+  height: 180px;
+}
+.flex-container {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-around;
+}
+button {
+  box-shadow: inset -27px -34px 12px -22px white;
+  background-color: white;
+  border-radius: 25px;
+  border: 2px solid #dcdcdc;
+  display: inline-block;
+  cursor: pointer;
+  color: #666666;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 12px 28px;
+  text-decoration: none;
+  text-shadow: -22px -5px 18px white;
+}
+button:disabled,
+button[disabled] {
+  border: 2px solid #dcdcdc;
+  background-color: white;
+  color: #666666;
+  opacity: 0.5;
+}
+button:hover,
+button[hover] {
+  background-color: #f6f6f6;
+}
+button:active,
+button[active] {
+  position: relative;
+  top: 1px;
+}
+
+/* Animations */
+.floatTop {
+  position: relative;
+  -webkit-animation: floatTop 0.5s infinite normal ease-out;
+  animation: floatTop 0.5s infinite normal ease-out;
+}
+.floatMid {
+  position: relative;
+  -webkit-animation: floatMid 0.5s infinite normal ease-out;
+  animation: floatMid 0.5s infinite normal ease-out;
+}
+.easyIn {
+  position: relative;
+  -webkit-animation: easyIn 0.5s infinite normal ease-out;
+  animation: easyIn 0.5s infinite normal ease-out;
+}
+.winner {
+  position: relative;
+  -webkit-animation: winner 1s infinite normal ease-in-out;
+  animation: winner 1s infinite normal ease-in-out;
+}
+
+@-webkit-keyframes floatTop {
+  0% {
+    top: 150px;
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    top: 0px;
+    opacity: 1;
+  }
+}
+
+@keyframes floatTop {
+  0% {
+    top: 150px;
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    top: 0px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes floatMid {
+  0% {
+    top: 100px;
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    top: 0px;
+    opacity: 1;
+  }
+}
+
+@keyframes floatMid {
+  0% {
+    top: 100px;
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    top: 0px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes easyIn {
+  0% {
+    top: 50px;
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    top: 0px;
+    opacity: 1;
+  }
+}
+
+@keyframes easyIn {
+  0% {
+    top: 50px;
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    top: 0px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes winner {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes winner {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
