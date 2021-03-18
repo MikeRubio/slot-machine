@@ -89,118 +89,24 @@ button[active] {
   top: 1px;
 }
 
-/* Animations */
-.floatTop {
-  position: relative;
-  -webkit-animation: floatTop 0.5s infinite normal ease-out;
-  animation: floatTop 0.5s infinite normal ease-out;
-}
-.floatMid {
-  position: relative;
-  -webkit-animation: floatMid 0.5s infinite normal ease-out;
-  animation: floatMid 0.5s infinite normal ease-out;
-}
-.easyIn {
-  position: relative;
-  -webkit-animation: easyIn 0.5s infinite normal ease-out;
-  animation: easyIn 0.5s infinite normal ease-out;
-}
 .winner {
   position: relative;
-  -webkit-animation: winner 1s infinite normal ease-in-out;
-  animation: winner 1s infinite normal ease-in-out;
-}
-
-@-webkit-keyframes floatTop {
-  0% {
-    top: 150px;
-    opacity: 0;
-  }
-  50% {
-    opacity: 0.5;
-  }
-  100% {
-    top: 0px;
-    opacity: 1;
-  }
-}
-
-@keyframes floatTop {
-  0% {
-    top: 150px;
-    opacity: 0;
-  }
-  50% {
-    opacity: 0.5;
-  }
-  100% {
-    top: 0px;
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes floatMid {
-  0% {
-    top: 100px;
-    opacity: 0;
-  }
-  50% {
-    opacity: 0.5;
-  }
-  100% {
-    top: 0px;
-    opacity: 1;
-  }
-}
-
-@keyframes floatMid {
-  0% {
-    top: 100px;
-    opacity: 0;
-  }
-  50% {
-    opacity: 0.5;
-  }
-  100% {
-    top: 0px;
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes easyIn {
-  0% {
-    top: 50px;
-    opacity: 0.5;
-  }
-  50% {
-    opacity: 0.7;
-  }
-  100% {
-    top: 0px;
-    opacity: 1;
-  }
-}
-
-@keyframes easyIn {
-  0% {
-    top: 50px;
-    opacity: 0.5;
-  }
-  50% {
-    opacity: 0.7;
-  }
-  100% {
-    top: 0px;
-    opacity: 1;
-  }
+  -webkit-animation: winner 0.8s infinite normal ease-in-out;
+  animation: winner 0.8s infinite normal ease-in-out;
 }
 
 @-webkit-keyframes winner {
   0% {
-    opacity: 0.5;
+    opacity: 0.2;
+  }
+  25% {
+    opacity: 0.4;
   }
   50% {
-    opacity: 0.7;
+    opacity: 0.6;
+  }
+  75% {
+    opacity: 0.8;
   }
   100% {
     opacity: 1;
@@ -209,10 +115,16 @@ button[active] {
 
 @keyframes winner {
   0% {
-    opacity: 0.5;
+    opacity: 0.2;
+  }
+  25% {
+    opacity: 0.4;
   }
   50% {
-    opacity: 0.7;
+    opacity: 0.6;
+  }
+  75% {
+    opacity: 0.8;
   }
   100% {
     opacity: 1;

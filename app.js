@@ -65,11 +65,7 @@ startBtn.onclick = () => {
   headerMessage.innerText = GL_TEXT;
   startBtn.disabled = true;
   resetBtn.disabled = true;
-  [(displayReel1, displayReel2, displayReel3, displayReel4)].map((elm) => {
-    elm.querySelector("#slot1").classList.remove("winner");
-    elm.querySelector("#slot2").classList.remove("winner");
-    elm.querySelector("#slot3").classList.remove("winner");
-  });
+  clearStatus();
   animate = true;
   shuffleAll();
   (reelRotation = (i) => {
@@ -93,42 +89,17 @@ startBtn.onclick = () => {
 };
 
 getResults = () => {
-  // middle line
-  if (
-    reel1[gIndex] === reel2[gIndex] &&
-    reel1[gIndex] === reel3[gIndex] &&
-    reel1[gIndex] === reel4[gIndex]
-  ) {
-    headerMessage.innerText = WIN_TEXT;
-    [displayReel1, displayReel2, displayReel3, displayReel4].map((elm) => {
-      elm.querySelector("#slot2").classList.add("winner");
-    });
-  }
-  // top line
-  tempTop = gIndex + 1 > max ? 0 : gIndex + 1;
-  if (
-    reel1[tempTop] === reel2[tempTop] &&
-    reel1[tempTop] === reel3[tempTop] &&
-    reel1[tempTop] === reel4[tempTop]
-  ) {
-    headerMessage.innerText = WIN_TEXT;
-    [displayReel1, displayReel2, displayReel3, displayReel4].map((elm) => {
-      elm.querySelector("#slot1").classList.add("winner");
-    });
-  }
-  // bot line
-  tempBot = gIndex - 1 < 0 ? max : gIndex - 1;
-  if (
-    reel1[tempBot] === reel2[tempBot] &&
-    reel1[tempBot] === reel3[tempBot] &&
-    reel1[tempBot] === reel4[tempBot]
-  ) {
-    headerMessage.innerText = WIN_TEXT;
-    [displayReel1, displayReel2, displayReel3, displayReel4].map((elm) => {
-      elm.querySelector("#slot3").classList.add("winner");
-    });
-  } else headerMessage.innerText = BLNT_TEXT;
+  reel1[gIndex] === reel2[gIndex] && reel1[gIndex] === reel3[gIndex]
+    ? addWinninClass([displayReel1, displayReel2, displayReel3])
+    : reel1[gIndex] === reel2[gIndex] && reel1[gIndex] === reel4[gIndex]
+    ? addWinninClass([displayReel1, displayReel2, displayReel4])
+    : reel1[gIndex] === reel3[gIndex] && reel1[gIndex] === reel4[gIndex]
+    ? addWinninClass([displayReel1, displayReel3, displayReel4])
+    : reel2[gIndex] === reel3[gIndex] && reel2[gIndex] === reel4[gIndex]
+    ? addWinninClass([displayReel2, displayReel3, displayReel4])
+    : (headerMessage.innerText = BLNT_TEXT);
 };
+
 stopBtn.onclick = () => {
   animate = false;
   resetBtn.disabled = false;
@@ -140,11 +111,27 @@ resetBtn.onclick = () => {
   defaultView();
 };
 
+addWinninClass = (arr) => {
+  arr.map((elm) => {
+    elm.querySelector("#slot2").classList.add("winner");
+  });
+  headerMessage.innerText = WIN_TEXT;
+};
+
+clearStatus = () => {
+  [displayReel1, displayReel2, displayReel3, displayReel4].map((elm) => {
+    elm.querySelector("#slot1").classList.remove("winner", "others");
+    elm.querySelector("#slot2").classList.remove("winner", "others");
+    elm.querySelector("#slot3").classList.remove("winner", "others");
+  });
+};
+
 defaultView = () => {
   [displayReel1, displayReel2, displayReel3, displayReel4].map((elm) => {
     elm.querySelector("#slot1").src = `images/${symbols[0]}.PNG`;
     elm.querySelector("#slot2").src = `images/${symbols[1]}.PNG`;
     elm.querySelector("#slot3").src = `images/${symbols[2]}.PNG`;
   });
+  clearStatus();
   headerMessage.innerText = GL_TEXT;
 };
