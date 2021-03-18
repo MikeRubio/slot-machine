@@ -16,10 +16,10 @@ const symbols = [
   "fig7",
   "fig8",
 ];
-const reel1 = ["fig1", "fig2", "fig3", "fig4", "fig5", "fig6", "fig7", "fig8"];
-const reel2 = ["fig1", "fig2", "fig3", "fig4", "fig5", "fig6", "fig7", "fig8"];
-const reel3 = ["fig1", "fig2", "fig3", "fig4", "fig5", "fig6", "fig7", "fig8"];
-const reel4 = ["fig1", "fig2", "fig3", "fig4", "fig5", "fig6", "fig7", "fig8"];
+const reel1 = [...symbols];
+const reel2 = [...symbols];
+const reel3 = [...symbols];
+const reel4 = [...symbols];
 const GL_TEXT = "Good Luck!";
 const BLNT_TEXT = "Better Luck Next Time";
 const WIN_TEXT = "Winner!";
@@ -45,10 +45,10 @@ shuffle = (arr) => {
 };
 
 shuffleAll = () => {
-  shuffle(reel1);
-  shuffle(reel2);
-  shuffle(reel3);
-  shuffle(reel4);
+  [reel1, reel2, reel3, reel4].map((r) => {
+    console.log(r);
+    shuffle(r);
+  });
 };
 
 buildReel = (arr, i, reel) => {
@@ -120,9 +120,9 @@ addWinninClass = (arr) => {
 
 clearStatus = () => {
   [displayReel1, displayReel2, displayReel3, displayReel4].map((elm) => {
-    elm.querySelector("#slot1").classList.remove("winner", "others");
-    elm.querySelector("#slot2").classList.remove("winner", "others");
-    elm.querySelector("#slot3").classList.remove("winner", "others");
+    elm.querySelector("#slot1").classList.remove("winner");
+    elm.querySelector("#slot2").classList.remove("winner");
+    elm.querySelector("#slot3").classList.remove("winner");
   });
 };
 
