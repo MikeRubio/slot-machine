@@ -1,1 +1,1 @@
-VanillaJS simple slopt machine
+VanillaJS simple slot machine
