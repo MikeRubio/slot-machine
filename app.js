@@ -1,7 +1,5 @@
 /**
  * By: Miguel Rubio
- * For: GameArt Reclutment Team
- *
  * Stay Safe!
  */
 
